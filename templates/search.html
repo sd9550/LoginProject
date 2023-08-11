@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h2>Search returned {{ results }} results</h2>
+    <div id="game-library">
+  {% for item in games: %}
+<!--    <p>{{ item['title'] }}</p>-->
+      <a href="{{ url_for('search', title=item['title'], img=item['sample_cover']['image']) }}">
+        <img src="{{ item['sample_cover']['image'] }}" width="100" alt="" /></a>
+  {% endfor %}
+        </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+<body>
+
+<form class="form-search" action="{{ url_for('profile') }}" method="post">
+    <input type="text" name="gameTitle" size="30">
+    <button type="submit">Search</button>
+</form>
+<div id="game-library">
+    {% for title in library %}
+        <img src="{{ title.img_url }}" alt="" width="150" />
+    {% endfor %}
+</div>
+{% extends 'footer.html' %}=
